@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{b3328754-d34e-4ae1-a5b9-65d1c01d66d6}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>ModelingProject1</Name>
+    <RootNamespace>ModelingProject1</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="Graph1.dgml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Graph2.dgml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\ModelingProject1.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\twMVC.Common\twMVC.Common.csproj">
+      <Name>twMVC.Common</Name>
+      <Project>{c884a6ac-b3dc-4453-9a6b-e5a8043d321f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\twMVC.Models\twMVC.Models.csproj">
+      <Name>twMVC.Models</Name>
+      <Project>{5a759dc4-2099-45f1-a41e-6e2e082d098c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\twMVC.Repositories\twMVC.Repositories.csproj">
+      <Name>twMVC.Repositories</Name>
+      <Project>{989b6bc3-c225-40e7-9fbf-5f72d04f9676}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\twMVC.Services\twMVC.Services.csproj">
+      <Name>twMVC.Services</Name>
+      <Project>{79717a96-50c1-4573-9889-59e8694cc2ef}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\twMVC.Web\twMVC.Web.csproj">
+      <Name>twMVC.Web</Name>
+      <Project>{0f398589-299f-4d93-9e77-f30b07478b00}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="LayerDiagram1.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="LayerDiagram1.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>LayerDiagram1.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="LayerDiagram1.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>LayerDiagram1.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="e130fc0a-d5a7-4753-ad2c-72feea3478a5" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="740ba815-846e-4afb-8f3c-66f4c81f24cc" name="Comment1">
+      <body>Presentation Layer</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="2e48c3a5-8abd-4e76-bd94-ffcda9541df8" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="fc6b8e94-4b66-4f11-a54a-1b785880171a" name="Comment2">
+      <body>Business Layer</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="e0d60866-88e1-401f-b4e0-92993d3898a5" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="706a4eee-2f65-4578-93e4-f27134ef35e6" name="Comment3">
+      <body>Data Access Layer</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="8254319d-804b-4769-b97f-8055efb4a800" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="f6c98faa-4f69-4ce4-be13-31e6994c6a90" name="Models" />
+    <layer Id="2e48c3a5-8abd-4e76-bd94-ffcda9541df8" name="MVC">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="319af5b4-c70c-4db4-a807-114243550bae" direction="Forward">
+          <layerMoniker Id="e0d60866-88e1-401f-b4e0-92993d3898a5" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="1e05997d-108f-40a5-b3ec-ed3188b620d3" name="Controller" />
+        <layer Id="c5a13eb1-40c8-40af-8d9e-a763082b6a7a" name="View">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="31d92616-ac7e-4c95-a790-963a3a6f0513" direction="Bidirectional">
+              <layerMoniker Id="1e05997d-108f-40a5-b3ec-ed3188b620d3" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="e0d60866-88e1-401f-b4e0-92993d3898a5" name="Services">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4eea30af-973b-4d8e-a668-c88e126b8e31" direction="Forward">
+          <layerMoniker Id="8254319d-804b-4769-b97f-8055efb4a800" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="8254319d-804b-4769-b97f-8055efb4a800" name="Repositories" />
+    <layer Id="305dc536-8d17-45ba-9ee6-791e346a2b44" name="Common" />
+  </layers>
+</layerModel>
